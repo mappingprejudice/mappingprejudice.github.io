@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <!-- End Responsive -->
+    <link rel=icon href="./assets/favicon.ico" sizes="32x32" type="image/vnd.microsoft.icon">
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web-dark.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/themes/dark/main.css">
+    <script src="./app/dojo.js"></script>
+    <script src="https://js.arcgis.com/4.8/"></script>
+    <script>require(["Application/init"]);</script>
+  </head>
+
+  <body class="configurable-application--loading">
+    <div id="main-container">
+      <div id="view-container">
+        <a id="logo" target="_blank" href="https://www.esri.com">
+          <img src="./assets/esri-white.png" height="53"/>
+        </a>
+      </div>
+      <div id="bottom-container">
+        <div id="chart-node"></div>
+      </div>
+    </div>
+  </body>
+
+  <div id="title-panel" class="panel hide">
+    <div id="app-title" class="font-size-3"></div>
+  </div>
+
+  <div id="info-panel" class="panel hide">
+    <div class="block-group block-group-2-up">
+      <div class="block text-center spacer">
+        <div id="year-node" class="text-blue font-size-7"></div>
+        <div class="font-size--3">year</div>
+      </div>
+      <div class="block text-center">
+        <div id="count-node" class="text-blue font-size-7"></div>
+        <div class="font-size--3">total</div>
+      </div>
+    </div>
+    <div id="time-input-group" class="input-group leader-half">
+      <span class="input-group-button">
+        <button id="play-pause-btn" class="btn-link font-size-3 icon-ui-play" title="Play / Pause"></button>
+      </span>
+      <input id="time-input" class="input-group-input btn-disabled" type="range" value="0">
+    </div>
+  </div>
+
+</html>
