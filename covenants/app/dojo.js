@@ -18,21 +18,20 @@
   const _a = window.location;
   const pathname = _a.pathname;
   const search = _a.search;
-  const distPath = pathname.substring(0, pathname.lastIndexOf('/'));
-  const appPath = distPath.slice(0, distPath.lastIndexOf('/'));
   const dojoLocale = search.match(/locale=([\w-]+)/) ? RegExp.$1 : undefined;
   const config = {
     async: true,
     locale: dojoLocale,
+
     has: { 'esri-featurelayer-webgl': 1 },
     packages: [
-      { name: 'config', location: distPath + '/config' },
+      { name: 'config', location: _a + 'covenants/config' },
       {
         name: 'ApplicationBase',
-        location: distPath + '/../js/application-base-js/',
+        location: _a + 'js/application-base-js/',
         main: 'ApplicationBase'
       },
-      { name: 'Application', location: distPath + '/app', main: 'Main' }
+      { name: 'Application', location: _a + 'covenants/app', main: 'Main' }
     ]
   };
   window['dojoConfig'] = config;
