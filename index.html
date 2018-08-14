@@ -27,6 +27,16 @@
   <script src="js/modalscripts.js"></script>
   <!-- override CSS file for bxslider main page -->
   <link href="css/bxslider_mainpage.css" rel="stylesheet">
+  <!-- carto css and js libs -->
+  <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+  <!-- moment used for date/time processing in map.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.js"></script>
+
+  <!-- custom map code -->
+  <link href="css/map.css" rel="stylesheet" />
+  <script src="js/map.js"></script>
+
   <script>
    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -127,11 +137,6 @@
               </li>
             </ul>
           </div>
-
-
-
-
-
         </div>
 
         <h3 class="main-title-lead">
@@ -173,43 +178,32 @@
     <!--Sub-header content -->
     <div id="sub-header-content">
       <div class="content-width">
-
-        <!--modal map screen -->
         <div class="content-block-2" style="background: url(images/iframe-map-background.png) no-repeat #111;">
           <h3 class="flex-title">Our Map</h3>
-          <div id="carto_div">
-            <div id="carto_div2">
-              <div id="carto_screen" onclick="screen_test()">
-                <script>function screen_test() {
-                   document.getElementById("carto_screen").style.display = "none";
-                 }
-                </script>
+
+          <div id="fullscreen-background">
+            <div id="map">
+              <div id="fullscreen">
+
+              </div>
+              <div id="count-container">
+                <div id="counts">
+                  <span>
+                    Year: <span class="year"></span> | Total: <span class="count"></span>
+                  </span>
+                </div>
+              </div>
+              <div id="kev-attribution">
+                <div id="attribution-text">
+                  <div id="attribution-link-txt">
+                    <img class="copyright" src="../images/cc.png">
+                    <a href="http://kevinehrman.com" target="_blank" id="attribution-link-font">Kevin Ehrman</a></img>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div class="iframe-background">
-            <div style="margin-right: 5%; margin-left: 5%;">
-              <div style="float: right">
-                <button id="kevBtn"></button>
-              </div>
-            </div>
-            <!-- Modal Iframe -->
-            <div id="myModal" class="modal">
-              <div class="modal-content">
-                <span class="close">x</span>
-                <iframe width="100%" height="93%" frameborder="0" src="background-blank/index.html" name="search_iframe" id="iframe-modal"></iframe>
-              </div>
-            </div>
-            <!-- Main Page Iframe -->
-            <div class="iframe-box">
-              <div id="map-border" style="text-align: center;">
-                <!-- Desktop -->
-                <iframe src="https://www.mappingprejudice.org/timelapse-hennepin/index.html" id="myiframe" name="search_iframe" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-                <!-- Mobile -->
-                <iframe src="https://www.mappingprejudice.org/timelapse-mobile/index.html" id=myiframe-mobile name="search_iframe" width="100%" height="425" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-              </div>
-            </div>
-          </div>
+
           <p class="img-sub-script">This interactive visualization shows the spread of racially-restrictive deeds across Minneapolis during the first half of the twentieth century.</p>
         </div>
 

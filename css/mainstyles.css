@@ -161,10 +161,10 @@
 
 }
 
-.cartodb-timeslider {
-    bottom: 15px !important;
-    left: 20px !important;
-}
+/* .cartodb-timeslider { */
+/*     bottom: 15px !important; */
+/*     left: 20px !important; */
+/* } */
 
 .cartodb-logo {
     display: none !important;
