@@ -77,6 +77,7 @@ function createTorqueLayer(map){
     type: "torque",
     table_name: 'centroids_all_2_5_2018',  // TODO update
     user_name: "ehrmanso",
+    https: true,
     tile_style: `
 /** torque visualization */
 
@@ -208,7 +209,7 @@ function main() {
     zoom: zoom
   });
 
-  L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(map)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(map)
 
   createLayers(map, logError)
 
