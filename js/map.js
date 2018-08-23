@@ -64,7 +64,9 @@ function createCountRenderer(counts, torqueLayer) {
 }
 
 function onTorqueLoad(map, torqueLayer) {
-  const sql = cartodb.SQL({ user: 'ehrmanso' });
+  const sql = cartodb.SQL({ user: 'ehrmanso',
+                            protocol: 'https'
+                          });
   sql.execute("select date_part('year', date_rec) as year, date_part('month', date_rec) as month, count(*) from centroids_all_2_5_2018 group by year, month order by year, month")
     .done(function(data) {
       var counts = calculateCumulativeCounts(data);
@@ -77,7 +79,6 @@ function createTorqueLayer(map){
     type: "torque",
     table_name: 'centroids_all_2_5_2018',  // TODO update
     user_name: "ehrmanso",
-    https: true,
     tile_style: `
 /** torque visualization */
 
@@ -108,7 +109,7 @@ Map {
  marker-width:5.5;
  marker-fill-opacity:0.225;
 }
-`})
+`}, {https:true})
 }
 
 
