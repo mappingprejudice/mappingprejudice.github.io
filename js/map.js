@@ -75,7 +75,7 @@ function onTorqueLoad(map, torqueLayer) {
 function createTorqueLayer(map){
   return cartodb.createLayer(map, {
     type: "torque",
-    table_name: 'centroids_all_2_5_2018',
+    table_name: 'centroids_all_2_5_2018',  // TODO update
     user_name: "ehrmanso",
     tile_style: `
 /** torque visualization */
@@ -159,9 +159,7 @@ function onPolygonLoad(map, torqueLayer, polygonLayer) {
 }
 
 function createPolygonLayer(map, torqueLayer) {
-  return cartodb.createLayer(map, 'https://mulchy.carto.com/api/v2/viz/dbd730fa-b01b-4a22-b540-c818b8537df4/viz.json', {
-    infowindows: false // using custom infowindows
-  })
+  return cartodb.createLayer(map, 'https://mulchy.carto.com/api/v2/viz/dbd730fa-b01b-4a22-b540-c818b8537df4/viz.json') // TODO update
 }
 
 function createLayers(map){
@@ -211,8 +209,12 @@ function main() {
   });
 
   L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png').addTo(map)
-  window.map = map
+
   createLayers(map, logError)
+
+  window.invalidateMapSize = function() {
+    map.invalidateSize()
+  }
 }
 
 $(main)

@@ -142,21 +142,18 @@ div.cartodb-timeslider .time {
 }
 
 .fullscreen-background {
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
   background-color: #000;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.8); */
 }
 
 .fullscreen {
-  margin: 2.5% !important;
-  height: 90% !important;
-  width: 95% !important;
+  margin: 2.5vw !important;
+  height: 95vh !important;
+  width: 95vw !important;
+}
+
+.o-hidden {
+  overflow: hidden;
 }
 
 .hide {

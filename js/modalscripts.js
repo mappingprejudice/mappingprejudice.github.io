@@ -1,15 +1,22 @@
 // Map Modal Settings
 $(document).ready(function () {
+  let fullscreen = false
+
   function toggle() {
-    $('#fullscreen-background').toggleClass('fullscreen-background');
+    //$('#fullscreen-background').toggleClass('fullscreen-background');
     $('#map').toggleClass('fullscreen')
     $('#map_hide').toggleClass('hide');
+    $('#map')[0].scrollIntoView()
+    $('body').toggleClass('o-hidden');
 
+    invalidateMapSize()
+
+    fullscreen = !fullscreen
   }
 
   $('#fullscreen').on('click', toggle);
   $('#fullscreen-background').on('click', function(e) {
-    if (e.target == this) {
+    if (e.target == this && fullscreen) {
       toggle()
     }
   });
