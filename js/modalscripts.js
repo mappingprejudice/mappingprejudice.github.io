@@ -3,13 +3,21 @@ $(document).ready(function () {
   let fullscreen = false
 
   function toggle() {
-    //$('#fullscreen-background').toggleClass('fullscreen-background');
-    $('#map').toggleClass('fullscreen')
     $('#map_hide').toggleClass('hide');
-    $('#map')[0].scrollIntoView()
+    $('#fullscreen-background').toggleClass('fullscreen');
+    $('#fullscreen-background')[0].scrollIntoView({behavior: 'instant', block: "start", inline: "nearest"})
+    $('#map').toggleClass('fullscreen');
+    $('#fullscreen').toggleClass('fullscreen');
     $('body').toggleClass('o-hidden');
 
-    invalidateMapSize()
+    if (fullscreen) {
+      $('#map-section')[0].scrollIntoView({behavior: 'instant', block: "start", inline: "nearest"})
+      let headerHeight = $('#show-nav').height()
+      window.scrollBy(0, -headerHeight)
+      $('.close').hide(0);
+    } else {
+      $('.close').fadeIn(750);
+    }
 
     fullscreen = !fullscreen
   }
@@ -20,7 +28,10 @@ $(document).ready(function () {
       toggle()
     }
   });
-
+  $('#map').on('transitionend', function() {
+    invalidateMapSize();
+  })
+  $('.close').on('click', toggle);
 })
 
 

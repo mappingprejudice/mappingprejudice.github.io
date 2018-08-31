@@ -141,15 +141,29 @@ div.cartodb-timeslider .time {
   padding: 0px;
 }
 
-.fullscreen-background {
+#fullscreen-background.fullscreen {
   background-color: #000;
-  background-color: rgba(0,0,0,0.8); */
+  background-color: rgba(0,0,0,0.8);
+  height: 100vh;
+  padding: 5vw;
+  box-sizing: border-box;
 }
 
-.fullscreen {
-  margin: 2.5vw !important;
-  height: 95vh !important;
-  width: 95vw !important;
+#map.fullscreen {
+  height: 100% !important;
+  width: 100% !important;
+  transition: width .5s, height .5s;
+}
+
+#close-fullscreen {
+    display: none;
+    position: absolute;
+    top: 2.5vw;
+    right: 2.5vw;         
+}
+
+#close-fullscreen.fullscreen {
+    display: block;
 }
 
 .o-hidden {
@@ -215,6 +229,14 @@ div.cartodb-timeslider .time {
 
   #fullscreen:hover {
     background-color: #f4f4f4;
+  }
+
+  #fullscreen.fullscreen {
+      background: #fff url(../images/exit-fullscreen.png) no-repeat 7px 3px;
+  }
+
+  #close-fullscreen {
+      display: none;
   }
 }
 

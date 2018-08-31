@@ -49,6 +49,7 @@
     height: 210px; 
 }
 .close {
+    display: none;
     color: #ffffff;
     float: right;
     font-size: 28px;
@@ -678,9 +679,12 @@ ul.bxslider {
     background-color: #00000094;
 }
 .banner-img {
+    max-width: 2000px;
+    margin: 0 auto;
     width: 100%;
     position: fixed;
     left: 0;
+    right: 0;
     height: 100%;
     z-index: -1;
     padding-bottom: 30px;
@@ -951,7 +955,7 @@ p {
     border-style: solid;
     border-color: black;
     padding: 20px;
-  
+    white-space: nowrap;
 }
 .bio-div{
     display:block; 
@@ -1606,47 +1610,41 @@ textarea[type="text"] {
 /**-------------------**/  
 /** RESPONSIVE DESIGN **/
 /**-------------------**/  
-
-@media screen and (max-width: 2200px){
-
-    .stickyNavList-btn {
-        display: none;
-    }
-    .page-title-padding {
-        padding: 150px;
-    }
-    .banner-img {
-        background: url(../images/shanty_postcard_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-about {
-        background: url(../images/group_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-covenants {
-        background: url(../images/delphian_heights_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-get-involved {
-        background: url(../images/aerial_banner_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-stories {
-        background: url(../images/covenants_wall_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-resources {
-        background: url(../images/resources_banner_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-    .banner-img-events{
-        background: url(../images/freeways_2600.png) no-repeat #111;
-        background-position: center top;
-    }
-     .iframe-div{
-        height: 450px;
-    }
+.stickyNavList-btn {
+    display: none;
 }
+.page-title-padding {
+    padding: 150px;
+}
+.banner-img {
+    background: url(../images/shanty_postcard_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-about {
+    background: url(../images/group_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-covenants {
+    background: url(../images/delphian_heights_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-get-involved {
+    background: url(../images/aerial_banner_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-stories {
+    background: url(../images/covenants_wall_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-resources {
+    background: url(../images/resources_banner_2600.png) no-repeat #111;
+    background-position: center top;
+}
+.banner-img-events{
+    background: url(../images/freeways_2600.png) no-repeat #111;
+    background-position: center top;
+}
+
 @media screen and (max-width: 1600px){
     .banner-img {
         background: url(../images/shanty_postcard_1600.png) no-repeat #111;
@@ -1680,6 +1678,7 @@ textarea[type="text"] {
         height: 530px;
     }
 }
+
 @media screen and (max-width: 1300px){
 
      .banner-img {
