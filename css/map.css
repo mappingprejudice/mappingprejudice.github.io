@@ -145,12 +145,16 @@ div.cartodb-timeslider .time {
   background-color: #000;
   background-color: rgba(0,0,0,0.8);
   height: 100vh;
-  padding: 5vw;
+  padding-top: calc(5vw - 32px);
+  padding-bottom: 5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   box-sizing: border-box;
 }
 
 #map.fullscreen {
-  height: 100% !important;
+  box-sizing: border-box;
+  height: calc(100% - 32px) !important;
   width: 100% !important;
   transition: width .5s, height .5s;
 }
